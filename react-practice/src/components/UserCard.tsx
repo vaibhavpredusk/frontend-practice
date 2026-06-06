@@ -1,11 +1,32 @@
-import { useState } from "react";
-const [role, setRole] = useState("all");
+import type { User } from "../types/user";
 
-<select
-  value={role}
-  onChange={(e) => setRole(e.target.value)}
->
-  <option value="all">All</option>
-  <option value="admin">Admin</option>
-  <option value="annotator">Annotator</option>
-</select>
+type UserCardProps = {
+  user: User;
+};
+
+export function UserCard({
+  user,
+}: UserCardProps) {
+  return (
+    <div
+      style={{
+        border: "1px solid gray",
+        padding: "10px",
+        marginBottom: "10px",
+      }}
+    >
+      <h3>{user.name}</h3>
+
+      <p>Email: {user.email}</p>
+
+      <p>Role: {user.role}</p>
+
+      <p>
+        Status:{" "}
+        {user.isActive
+          ? "Active"
+          : "Inactive"}
+      </p>
+    </div>
+  );
+}
