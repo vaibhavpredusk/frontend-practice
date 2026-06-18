@@ -8,6 +8,8 @@ import { FocusableSearchPanel } from "./components/FocusableSearchPanel";
 import { DebouncedUserSearch } from "./components/DebouncedUserSearch";
 import { WindowShortcutHint } from "./components/WindowShortcutHint";
 import { SimulatedUserLoader } from "./components/SimulatedUserLoader";
+import { MemoizedUserList } from "./components/MemoizedUserList";
+import { ResizeObserverDemo } from "./components/ResizeObserverDemo";
 
 function App() {
   return (
@@ -23,11 +25,14 @@ function App() {
       <FocusableSearchPanel
         panelTitle="User Search"
       />
-       <DebouncedUserSearch
+      <DebouncedUserSearch
       users={sampleUsers}
       />
       <WindowShortcutHint/>
       <SimulatedUserLoader/>
+      <MemoizedUserList users={sampleUsers}/>
+
+      <ResizeObserverDemo/>
     </div>
     
   );
