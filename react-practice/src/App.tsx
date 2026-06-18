@@ -7,6 +7,7 @@ import { sampleUsers } from "./data/sampleUsers";
 import { FocusableSearchPanel } from "./components/FocusableSearchPanel";
 import { DebouncedUserSearch } from "./components/DebouncedUserSearch";
 import { WindowShortcutHint } from "./components/WindowShortcutHint";
+import { SimulatedUserLoader } from "./components/SimulatedUserLoader";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
       users={sampleUsers}
       />
       <WindowShortcutHint/>
+      <SimulatedUserLoader/>
     </div>
     
   );
